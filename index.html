@@ -151,47 +151,74 @@ footer a:hover{color:var(--gold)}
 .powered{font-size:0.7rem;opacity:0.35}
 
 @media (max-width: 768px) {
-  .topbar { display: none; }
-  nav { padding: 0 1.25rem; height: 58px; }
-  .nav-logo-text { font-size: 0.9rem; }
-  .nav-logo-sub { font-size: 0.6rem; }
-  .nav-links > a, .nav-links > .lang-toggle { display: none; }
-  .nav-cta { padding: 7px 14px; font-size: 0.8rem; }
+  .topbar { display: none !important; }
+  nav, .md-nav { padding: 0 1.25rem !important; height: 58px !important; }
+  .nav-links, .md-nav-links { gap: 0 !important; }
+  .nav-links a, .nav-link, .md-nav-link { display: none !important; }
+  .lang-toggle, .md-lang-toggle { margin: 0 0.5rem !important; }
+  .nav-cta, .md-nav-cta { padding: 7px 12px !important; font-size: 0.78rem !important; }
 
-  .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-text { padding: 3rem 1.5rem 2rem; order: 1; }
-  .hero-name { font-size: 1.2rem; }
-  h1 { font-size: 2.2rem; }
-  .hero-p { font-size: 0.9rem; max-width: 100%; }
-  .hero-right { order: 2; padding: 0 1.5rem 2rem; }
-  .hero-portrait-wrap { padding: 0; justify-content: center; }
-  .hero-portrait-img { max-height: 280px; border-radius: 16px; }
-  .hero-rating-badge { top: 0.5rem; left: 0.5rem; padding: 0.75rem 1rem; }
-  .hero-rating-badge .score { font-size: 1.8rem; }
+  /* HERO - all sites */
+  .hero, .md-hero { grid-template-columns: 1fr !important; min-height: auto !important; }
+  .hero-text, .md-hero-text, .hero-left { padding: 2.5rem 1.5rem 2rem !important; order: 1 !important; }
+  .hero-right, .hero-img, .md-hero-img { order: 2 !important; min-height: 260px !important; }
+  .hero-right img, .hero-img img, .md-hero-img img { max-height: 300px !important; object-fit: cover !important; }
+  h1, .md-hero-h1 { font-size: 2rem !important; }
+  .hero-p, .md-hero-p, .hero-desc { max-width: 100% !important; font-size: 0.9rem !important; }
+  .hero-name { font-size: 1.1rem !important; }
+  .hero-portrait-wrap { padding: 1rem 1.5rem 0 !important; }
+  .hero-portrait-img { max-height: 280px !important; }
+  .hero-rating-badge { top: 0.5rem !important; left: 0.5rem !important; padding: 0.6rem 0.9rem !important; }
+  .hero-rating-badge .score { font-size: 1.6rem !important; }
+  .hero-illustration, .hero-right > div { flex-direction: row !important; flex-wrap: wrap !important; gap: 0.75rem !important; padding: 1.5rem !important; }
+  .hero-card { padding: 1rem !important; flex: 1 1 140px !important; }
+  .hero-quote { flex: 1 1 100% !important; }
+  .hero-card-row { grid-template-columns: 1fr 1fr !important; gap: 0.75rem !important; }
 
-  .stats-bar { grid-template-columns: repeat(3,1fr); padding: 1.25rem 0.75rem; }
-  .stat-num { font-size: 1.6rem; }
-  .stat-label { font-size: 0.68rem; }
+  /* TRUST / STATS BAR */
+  .trust, .stats-bar, .md-trust { padding: 1.25rem 0.75rem !important; }
+  .trust-num, .stat-num, .md-trust-num { font-size: 1.6rem !important; }
+  .trust-label, .stat-label, .md-trust-label { font-size: 0.65rem !important; }
 
-  .about { padding: 3rem 1.5rem; }
-  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .about-portrait-col { display: none; }
-  .section-title { font-size: 1.7rem; }
+  /* SECTIONS */
+  section, .reviews, .contact, .booking, .space, .info, .about, .services, .hours { padding: 3rem 1.5rem !important; }
+  .section-title, .md-section-title { font-size: 1.7rem !important; }
 
-  .services { padding: 3rem 1.5rem; }
-  .services-head { grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 2rem; }
-  .services-grid { grid-template-columns: 1fr; }
+  /* ABOUT */
+  .about-grid, .md-about-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .about-portrait-col, .about-photos, .md-about-photos { display: none !important; }
+  .about-portrait-wrap { display: none !important; }
 
-  .reviews { padding: 3rem 1.5rem; }
-  .reviews-head { flex-direction: column; gap: 0.75rem; }
-  .reviews-head p { text-align: left; }
-  .reviews-grid { grid-template-columns: 1fr; }
+  /* SERVICES */
+  .services-head, .md-services-head { grid-template-columns: 1fr !important; gap: 0.75rem !important; margin-bottom: 2rem !important; }
+  .services-grid, .md-services-grid { grid-template-columns: 1fr !important; }
+  .services-grid { border-radius: 12px !important; }
 
-  .contact { padding: 3rem 1.5rem; }
-  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  /* GALLERY */
+  .gallery, .md-gallery { grid-template-columns: 1fr 1fr !important; grid-template-rows: auto !important; height: auto !important; }
+  .gallery-item.main, .md-gallery-item.main, .g-item.main { grid-row: span 1 !important; }
+  .gallery-item img, .g-item img { height: 160px !important; }
 
-  footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.5rem; }
-  footer div { text-align: center !important; }
+  /* REVIEWS */
+  .reviews-head, .reviews-grid { flex-direction: column !important; }
+  .reviews-head { display: block !important; margin-bottom: 2rem !important; }
+  .reviews-grid, .md-services-grid { grid-template-columns: 1fr !important; }
+
+  /* CONTACT */
+  .contact-grid, .md-contact-grid, .info-grid, .booking-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .contact-info-card, .contact-card { margin-bottom: 0 !important; }
+
+  /* HOURS */
+  .hours-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+
+  /* CV */
+  .cv-section > div[style] { grid-template-columns: 1fr !important; gap: 2rem !important; }
+
+  /* FOOTER */
+  footer, .md-footer { flex-direction: column !important; gap: 1.5rem !important; text-align: center !important; padding: 2rem 1.5rem !important; }
+  footer div, .md-footer div { text-align: center !important; }
+  .footer-top { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .footer-bottom { flex-direction: column !important; gap: 0.75rem !important; }
 }
 
 </style>
